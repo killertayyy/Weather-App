@@ -1,0 +1,44 @@
+body {
+  font-family: arial, sans-serif;
+}
+h1 {
+  color: #7c7c7c;
+  font-size: 20px;
+  font-weight: 100;
+  height: 19px;
+  line-height: 1;
+}
+h2 {
+  color: #7c7c7c;
+  font-size: 16px;
+  font-weight: 100;
+  height: 19px;
+  line-height: 1;
+}
+h3 {
+  color: #7c7c7c;
+  font-size: 16px;
+  font-weight: 100;
+  height: 19px;
+  line-height: 1;
+}
+ul {
+  margin: 0 0 10px;
+  padding: 0;
+}
+li {
+  color: #7c7c7c;
+  font-size: 16px;
+  font-weight: 100;
+  height: 19px;
+  line-height: 1;
+  list-style: none;
+}
+.weather-cloud {
+  color: rgb(127, 127, 175);
+  font-size: 200px;
+}
+.weather-cloud-rain {
+  color: rgb(127, 127, 175);
+  font-size: 100px;
+}
