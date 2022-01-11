@@ -1,12 +1,13 @@
 body {
   font-family: arial, sans-serif;
+  background: #f9f7fe;
 }
 h1 {
-  color: #7c7c7c;
-  font-size: 20px;
-  font-weight: 100;
+  color: #272142;
+  font-size: 38px;
+  font-weight: 700;
   height: 19px;
-  line-height: 1;
+  line-height: 48px;
 }
 h2 {
   color: #7c7c7c;
@@ -29,10 +30,30 @@ ul {
 li {
   color: #7c7c7c;
   font-size: 16px;
-  font-weight: 100;
+  font-weight: 500;
   height: 19px;
-  line-height: 1;
+  line-height: 20px;
   list-style: none;
+  margin-bottom: 5px;
+}
+form {
+  padding: 20px 0 0 0;
+}
+footer {
+  font-size: 14px;
+  margin-top: 40px;
+  line-height: 18px;
+  text-align: center;
+  color: #272142;
+}
+.weather-app {
+  max-width: 800px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+  padding: 40px;
+  color: #878787;
 }
 .weather-cloud {
   color: rgb(127, 127, 175);
@@ -41,4 +62,10 @@ li {
 .weather-cloud-rain {
   color: rgb(127, 127, 175);
   font-size: 100px;
+}
+.temperature {
+  color: #272142;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1;
 }
