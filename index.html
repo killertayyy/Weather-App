@@ -29,17 +29,14 @@
         <div class="row">
           <div class="col-6">
             <div class="card-body">
-              <p class="card-text"></p>
               <h1 id="city"></h1>
-            </br>
             <div class="clearfix weather-temperature">
               <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt ="cloudy" class="float-left"> </img>
             <span class="temperature" id="temperature"></span>
-             <span class="units">
-                <a href="#" id="celsius-link"> °C </a> |<a href="#" id="farenheit-link"> °F </a>
+             <span class="units"><a href="#" id="celsius-link"> °C </a> |<a href="#" id="farenheit-link"> °F </a>
               </span>
               </div>
-              <ul>
+              <ul id="left-column-stats">
                  <li id="description"></li>
                  <li>Humidity: <span id="humidity"></span>%</li>
               <li>Wind: <span id="wind"></span> km/h</li>
@@ -48,7 +45,7 @@
             </div>
           </div>
           <div class="col-6">
-            <ul>
+            <ul id="right-column-stats">
              <li id="date"></li>
             </ul>
             <form class="search-form" id="search-form">
