@@ -17,6 +17,16 @@ body {
   height: 64px;
   width: 64px;
 }
+.weather-temperature .active {
+  color: #272142;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+  cursor: default;
+}
+
 h1 {
   color: #272142;
   font-size: 38px;

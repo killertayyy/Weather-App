@@ -31,12 +31,17 @@
             <div class="card-body">
               <h1 id="city"></h1>
             <div class="clearfix weather-temperature">
-              <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt ="cloudy" class="float-left"> </img>
+              <img id ="icon"
+              src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" 
+              alt ="cloudy" 
+              class="float-left"> </img>
             <span class="temperature" id="temperature"></span>
-             <span class="units"><a href="#" id="celsius-link"> °C </a> |<a href="#" id="farenheit-link"> °F </a>
+             <span class="units">
+               <a href="#" id="celsius-link" class="active"> °C </a> |
+               <a href="#" id="farenheit-link" class="active"> °F </a>
               </span>
               </div>
-              <ul id="left-column-stats">
+              <ul>
                  <li id="description"></li>
                  <li>Humidity: <span id="humidity"></span>%</li>
               <li>Wind: <span id="wind"></span> km/h</li>
@@ -45,33 +50,30 @@
             </div>
           </div>
           <div class="col-6">
-            <ul id="right-column-stats">
+            <ul>
              <li id="date"></li>
             </ul>
-            <form class="search-form" id="search-form">
               <div class="row">
                 <div class="col-6">
+                  <form  id="search-form">
                   <input
                     type="search"
-                    placeholder="Lookup your city"
+                    placeholder="Type a city..."
+                      class="form-control"
                     autofocus="on"
                     autocomplete="off"
-                    aria-label="Search city"
                     id="change-city-input"
-                    class="form-control shadow-sm w-100"
-                  /><br />
+                  />
                 </div>
                 <div class="col-3">
-                  <a href="#" class="btn btn-primary" id="current-button">Search</a>
+                  <input type="submit" value="Search" class="btn btn-primary w-100" id="current-button"></input>
                 </div>
                 <div class="col-3">
-                  <a
-                    href="#"
-                    class="btn btn-success shadow-sm w-100"
-                    id="current-location-button">Current</a>
+                  <input type="submit" value="Current" class="btn btn-success  w-100"id="current-location-button"></input>
+                  </div>
+                </form>
                 </div>
               </div>
-            </form>
           </div>
         </div>
 
