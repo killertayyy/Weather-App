@@ -41,13 +41,6 @@ h2 {
   height: 19px;
   line-height: 1;
 }
-h3 {
-  color: #7c7c7c;
-  font-size: 16px;
-  font-weight: 100;
-  height: 19px;
-  line-height: 1;
-}
 ul {
   margin: 0 0 10px;
   padding: 0;
@@ -63,6 +56,23 @@ li {
 }
 form {
   padding: 20px 0 0 0;
+}
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #7c7c7c;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  color: #7c7c7c;
+  opacity: 0.5;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+.weather-forecast-temperatures {
+  font-size: 13px;
+  color: #272142;
 }
 footer {
   font-size: 14px;
