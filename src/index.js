@@ -40,6 +40,38 @@ function formatDate(date) {
   return `${currentDay}, ${currentMonth} ${currentDate} </br> ${hour}:${minute}`;
 }
 
+function displayForecast () {
+  let forecastElement = document.querySelector("#forecast");
+
+   let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class = "row">`;
+  
+  days.forEach(function (day) {
+  forecastHTML = forecastHTML + 
+`
+            <div class="col-2">
+              <div class="weather-forecast-date">${day}</div>
+                <img id ="icon"
+              src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" 
+              alt ="cloudy" 
+              width="42"> </img>
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max">
+            18 °
+          </span>
+          <span class="weather-forecast-temperature-min">
+            12 °
+          </span>
+        </div>
+        </div>
+        `;
+  });
+        forecastHTML = forecastHTML + `</div>`;
+        forecastElement.innerHTML = forecastHTML;
+}
+
+
 let date = document.querySelector("#date");
 date.innerHTML = formatDate(currentTime);
 
@@ -113,3 +145,5 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Portland");
+
+displayForecast();
