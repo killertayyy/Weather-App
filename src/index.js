@@ -40,15 +40,16 @@ function formatDate(date) {
   return `${currentDay}, ${currentMonth} ${currentDate} </br> ${hour}:${minute}`;
 }
 
-function displayForecast () {
+function displayForecast (response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
    let days = ["Thu", "Fri", "Sat", "Sun"];
 
   let forecastHTML = `<div class = "row">`;
-  
   days.forEach(function (day) {
-  forecastHTML = forecastHTML + 
+  forecastHTML = 
+  forecastHTML + 
 `
             <div class="col-2">
               <div class="weather-forecast-date">${day}</div>
@@ -71,23 +72,37 @@ function displayForecast () {
         forecastElement.innerHTML = forecastHTML;
 }
 
-
-let date = document.querySelector("#date");
-date.innerHTML = formatDate(currentTime);
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "ec824669115ff10b58f60bec0b07429e";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function displayWeatherCondition(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    celsiusTemperautre);
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
-    document.querySelector("#icon").setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let date = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
 
-    celsiusTemperautre= response.data.main.temp;
+  celsiusTemperature = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  date.innerHTML = formatDate(currentTime);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  
+    getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -145,5 +160,3 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Portland");
-
-displayForecast();
