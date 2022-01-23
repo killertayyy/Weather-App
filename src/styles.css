@@ -55,8 +55,9 @@ li {
   margin-bottom: 5px;
 }
 form {
-  padding: 20px 0 0 0;
+  padding: 20px 0 20px 0;
 }
+
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
@@ -85,10 +86,7 @@ footer {
   color: rgb(127, 127, 175);
   font-size: 200px;
 }
-.weather-cloud-rain {
-  color: rgb(127, 127, 175);
-  font-size: 100px;
-}
+
 .temperature {
   color: #272142;
   font-weight: 700;

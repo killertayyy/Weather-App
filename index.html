@@ -36,10 +36,9 @@
               alt ="cloudy" 
               class="float-left"> </img>
             <span class="temperature" id="temperature"></span>
-             <span class="units">
-               <a href="#" id="celsius-link" class="active"> °C </a> |
-               <a href="#" id="farenheit-link" class="active"> °F </a>
-              </span>
+             <span class="units">°C</span> 
+               
+            
               </div>
               <ul>
                  <li id="description"></li>
@@ -49,6 +48,7 @@
               <br />
             </div>
           </div>
+          
           <div class="col-6">
             <ul>
              <li id="date"></li>
@@ -65,11 +65,13 @@
                     id="change-city-input"
                   />
                 </div>
-                <div class="col-3">
+                <div class="row">
+                <div class="col-4">
                   <input type="submit" value="Search" class="btn btn-primary w-100" id="current-button"></input>
                 </div>
-                <div class="col-3">
+                <div class="col-4">
                   <input type="submit" value="Current" class="btn btn-success  w-100"id="current-location-button"></input>
+                  </div>
                   </div>
                 </form>
                 </div>
@@ -78,7 +80,7 @@
         </div>
 
         <div class="weather forecast" id="forecast"></div>
-        </div>
+       </div>
 
           
        <footer>

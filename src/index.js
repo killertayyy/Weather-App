@@ -53,14 +53,13 @@ function displayForecast (response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class = "row">`;
-  forecast.forEach(function (forecastDay,index) {
+  forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
         forecastHTML = 
   forecastHTML + 
 `
             <div class="col-2">
               <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-              ${index}
                 <img
               src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
               alt ="image" 
@@ -137,14 +136,7 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function convertToFarenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celsiusLink.classList.remove("active");
-  farenheitLink.classList.add("active");
-  let farenheitTemperature = (celsiusTemperautre * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(farenheitTemperature);
-}
+
 
 function convertToCelsius(event){
   event.preventDefault();
@@ -154,13 +146,6 @@ function convertToCelsius(event){
   temperatureElement.innerHTML = Math.round(celsiusTemperautre);
 }
 
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", convertToFarenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
-
-let celsiusTemperautre = null; 
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
