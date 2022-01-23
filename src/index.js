@@ -130,13 +130,6 @@ function searchLocation(position) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
-}
-
-
-
 function convertToCelsius(event){
   event.preventDefault();
   celsiusLink.classList.add("active");
@@ -145,11 +138,7 @@ function convertToCelsius(event){
   temperatureElement.innerHTML = Math.round(celsiusTemperautre);
 }
 
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
-
-let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Portland");
