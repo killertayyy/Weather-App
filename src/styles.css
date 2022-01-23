@@ -11,6 +11,7 @@ body {
   padding: 40px;
   color: #878787;
 }
+
 .weather-temperature img {
   margin-right: 10px;
   float: left;
@@ -61,10 +62,14 @@ form {
 .btn {
   margin-top: 20px;
 }
+
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
   color: #7c7c7c;
+}
+.forecast {
+  padding-left: 30px;
 }
 .weather-forecast-date {
   font-size: 16px;
